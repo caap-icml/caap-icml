@@ -1,0 +1,24 @@
+
+def convert_df(df): 
+
+    df = df.rename(columns={'tag': 'type'})
+
+    # add xy & delete left, width, top, height
+    df['x1'] = round(df['left']).astype(int)
+    df['x2'] = round(df['left'] + df['width']).astype(int)
+    df.drop(['left', 'width'], axis=1, inplace=True)
+    df['y1'] = round(df['top']).astype(int)
+    df['y2'] = round(df['top'] + df['height']).astype(int)
+    df.drop(['top', 'height'], axis=1, inplace=True)
+    
+    # replace 0 with empty string in 'bool' column
+    df['focused'] = 'False'
+    
+    # convert type
+    df = df.replace('div', 'unknown')
+    
+    # data cleanning
+    df = df[df['type'] == 'unknown']
+    # df = df[df['type'] != 'span']
+    
+    return df
