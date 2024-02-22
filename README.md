@@ -10,8 +10,8 @@ This README.md file provides an overview of the repository and instructions for 
 ```python
 git clone https://github.com/caap-icml/caap-icml.git
 cd caap-icml
-# Pyhon 3.9.12 or higher
-pip3 install -r requirements.txt
+# requirements was created at Pyhon 3.9.12 
+python -m pip install -r requirements.txt
 ```
 
 
