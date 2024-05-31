@@ -1,0 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Custom data
+/data/_temp/
+/data/win_config/
+/data/llm_agent_record/
